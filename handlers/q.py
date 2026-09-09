@@ -134,4 +134,4 @@ async def q(
             os.remove(image_filename)
 
     except Exception as e:
-        await message.answer(f"Error: {e}")
+        await message.answer(f"Error: {e}", parse_mode=None)
