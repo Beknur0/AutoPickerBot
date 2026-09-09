@@ -106,32 +106,32 @@ async def q(
                     listt.pop(0)
 
         filename = f"{command.args}.html"
-        image_filename = f"{command.args}.png"
+        # image_filename = f"{command.args}.png"
 
         with open(filename, "w", encoding="utf-8") as f:
             f.write(soup.prettify())
 
-        async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
-            page = await browser.new_page(viewport={"width": 1200, "height": 800})
+        # async with async_playwright() as p:
+        #     browser = await p.chromium.launch(headless=True)
+        #     page = await browser.new_page(viewport={"width": 1200, "height": 800})
 
-            await page.goto(f"file://{os.path.abspath(filename)}")
+        #     await page.goto(f"file://{os.path.abspath(filename)}")
 
-            # Ждём, пока страница полностью загрузится
-            await page.wait_for_load_state("networkidle")
+        #     # Ждём, пока страница полностью загрузится
+        #     await page.wait_for_load_state("networkidle")
 
-            # Скриншот всей страницы
-            await page.screenshot(path=image_filename, full_page=True)
+        #     # Скриншот всей страницы
+        #     await page.screenshot(path=image_filename, full_page=True)
 
-            await browser.close()
+        #     await browser.close()
 
-        await message.answer_photo(FSInputFile(image_filename), caption=command.args)
+        await message.answer_photo(FSInputFile(filename), caption=command.args)
 
         if os.path.exists(filename):
             os.remove(filename)
 
-        if os.path.exists(image_filename):
-            os.remove(image_filename)
+        # if os.path.exists(image_filename):
+        #     os.remove(image_filename)
 
     except Exception as e:
         await message.answer(f"Error: {e}", parse_mode=None)
