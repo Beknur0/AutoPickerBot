@@ -58,7 +58,12 @@ async def is_course_matches(bot: Bot, code: str, Ptime: str, Ntime: str) -> bool
         soup = BeautifulSoup(html_clean, "lxml")
 
         table = soup.find_all("table")[6]
-        raw_list = [Ptime, Ntime]
+        if not Ptime:
+            raw_list = [Ntime]
+        elif not Ntime:
+            raw_list = [Ptime]
+        else:
+            raw_list = [Ptime, Ntime]
         result = [item.strip() for sub in raw_list for item in sub.split(",")]
 
         for i in result:
