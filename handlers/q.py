@@ -125,7 +125,7 @@ async def q(
 
         #     await browser.close()
 
-        await message.answer_photo(FSInputFile(filename), caption=command.args)
+        await message.answer_document(FSInputFile(filename), caption=command.args)
 
         if os.path.exists(filename):
             os.remove(filename)
