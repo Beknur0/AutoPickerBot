@@ -16,19 +16,21 @@ CHAT_ID = int(os.getenv("CHAT_ID"))
 
 COURSES = [
     # 12
-    "INF 365",
+    # "INF 365",
     # 11
     "INF 414",
-    "INF 407",
-    "INF 431",
-    # 10
-    "CSS 314",
+
     # RTM
     "CSS 410",
     # MDE
     "MDE 160",
+
+    "INF 407",
+    # "INF 431",
+    # 10
+    # "CSS 314",
     # 9
-    "INF 406",
+    # "INF 406",
 ]
 
 # elective9 6540
