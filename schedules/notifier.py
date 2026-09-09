@@ -25,7 +25,7 @@ COURSES = [
     # MDE
     "MDE 160",
 
-    "INF 407",
+    # "INF 407",
     # "INF 431",
     # 10
     # "CSS 314",

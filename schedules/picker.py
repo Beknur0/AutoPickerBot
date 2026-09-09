@@ -15,10 +15,10 @@ USERNAME = int(os.getenv("USERNAME"))
 CHAT_ID = int(os.getenv("CHAT_ID"))
 
 NEEDABLE: dict[str, dict[str, list | str]] = {
-    "INF 414": {"ids": ["2", "1"], "replacement": "INF 407"},
+    "INF 414": {"ids": ["2"], "replacement": "INF 407"},
     "CSS 410": {"ids": ["1", "2"], "replacement": "CSS 410"},
     "MDE 160": {"ids": ["5", "6", "1", "2", "3", "4", "7"], "replacement": ""},
-    "INF 407": {"ids": ["1"], "replacement": "INF 407"},
+    # "INF 407": {"ids": ["1"], "replacement": "INF 407"},
     # "INF 365": {"ids": ["2"], "replacement": "INF 365"},
     # "CSS 314": {"ids": ["6", "4"], "replacement": "CSS 314"},
 }
