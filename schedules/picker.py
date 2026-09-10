@@ -274,13 +274,15 @@ async def press_confirm(bot: Bot):
 async def check_is_needable(bot: Bot, new_coutas: dict[str, dict]):
     is_reg_confirmed = await session.is_confirm_pressed()
 
-    if is_reg_confirmed:
-        await press_cancel(bot)
+    # if is_reg_confirmed:
+    #     await press_cancel(bot)
 
     for code, section in new_coutas.items():
         if code in NEEDABLE:
             for id in NEEDABLE[code]["ids"]:
                 if id in section:
+                    if is_reg_confirmed:
+                        await press_cancel(bot)
                     await bot.send_message(
                         CHAT_ID,
                         f"Check if the course {code} with pracitce id {id} fits to schedule",
