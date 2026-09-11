@@ -21,7 +21,7 @@ COURSES = [
     "INF 414",
 
     # RTM
-    "CSS 410",
+    # "CSS 410",
     # MDE
     "MDE 160",
 
